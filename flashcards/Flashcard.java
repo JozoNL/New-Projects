@@ -1,7 +1,6 @@
 package flashcards;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -91,7 +90,7 @@ public class Flashcard {
         int counter = 0;
         System.out.println("File name:");
         String fileName = SCANNER.nextLine();
-        try (PrintWriter writer = new PrintWriter(new File(fileName))) {
+        try (PrintWriter writer = new PrintWriter(fileName)) {
             for (Card card : CARDS) {            // each card takes 3 lines
                 writer.println(card.term);       // first line (term)
                 writer.println(card.definition); // second line (definition)

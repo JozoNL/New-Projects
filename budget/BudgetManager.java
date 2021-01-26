@@ -10,19 +10,9 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 /**
- * Class for creating and running the budget manager.
- */
-public class Manager {
-    public static void main(String[] args) {
-        BudgetManager manager = new BudgetManager();
-        manager.manage();
-    }
-}
-
-/**
  * Class for working with the budget manager.
  */
-class BudgetManager {
+public class BudgetManager {
     private static final Scanner SCANNER = new Scanner(System.in);          // for user input
     private static final StringBuilder MAIN_MENU;                           // text for main menu
     private static final StringBuilder ADD_PURCHASE_MENU;                   // text for add purchase menu
@@ -344,62 +334,5 @@ class BudgetManager {
     private void sortCertainType() {
         int option = checkInput(SORT_SUBMENU, 1, 4);                // valid values (1-4)
         sortCategory(--option);
-    }
-}
-
-/**
- * Class to create a specific category of purchases.
- */
-class Category {
-    private final ArrayList<String> items = new ArrayList<>();     // list of the items
-    private final String name;                                     // name of the category
-    private double sum;                                            // price of all the items summed
-
-    /**
-     * Constructor for a category.
-     * @param name name of the category
-     */
-    public Category(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Getter for the list of items of this category.
-     * @return list of items of this category
-     */
-    public ArrayList<String> getItems() {
-        return items;
-    }
-
-    /**
-     * Getter for the name of this category.
-     * @return name of this category
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Getter for a sum of this category.
-     * @return the sum of this category
-     */
-    public double getSum() {
-        return sum;
-    }
-
-    /**
-     * Adds the specific amount to the total sum.
-     * @param toAdd the amount to be added
-     */
-    public void addToSum(double toAdd) {
-        sum += toAdd;
-    }
-
-    /**
-     * Setter for a sum of this category.
-     * @param sum the new sum to be set
-     */
-    public void setSum(double sum) {
-        this.sum = sum;
     }
 }
